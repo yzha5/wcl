@@ -1,0 +1,6 @@
+.idea
+.DS_Store
+yarn.lock
+lerna-debug.log
+**/node_modules
+**/lib

@@ -1,0 +1,17 @@
+{
+  "name": "@wdkx/develop",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "yangzhao <yzha5@163.com>",
+  "homepage": "",
+  "license": "ISC",
+  "type": "module",
+  "publishConfig": {
+    "registry": "http://registry.npmmirror.com/"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  }
+}

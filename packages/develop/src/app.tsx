@@ -1,8 +1,10 @@
+import IconPage from './pages/icon'
 import { Button, IconButton } from './pkgs/components/button/src'
+import Container from './pkgs/components/container/src/Container'
 
 export default function App() {
     return (
-        <div>
+        <Container maxWidth='lg' hideDown='md'>
             <Button text='button' secondaryText='secondary text' />
             <div>1</div>
             <Button text='中文按钮' secondaryText='第二行也是中文的' />
@@ -11,7 +13,8 @@ export default function App() {
             <Button text='中文按钮' secondaryText='第二行也是中文的' size={144} radius={24} />
             <Button text='中文按钮' secondaryText='第二行也是中文的' size={144} radius={24} disabled />
             <IconButton icon='App' size={144} radius={24} />
-            <IconButton icon='App' color='error' size={144} radius={72} />
-        </div>
+            <IconButton icon='HeavyRain' color='error' size={144} radius={72} />
+            <IconPage />
+        </Container>
     )
 }

@@ -6,7 +6,7 @@ export interface Breakpoints {
     md: number
     lg: number
     xl: number
-    xxl: number
+    '4k': number
 }
 
 export interface Palette {
@@ -43,11 +43,11 @@ export const lightTheme: Theme = {
         disabledBg: '#ebebeb',
     },
     breakpoints: {
-        xs: 0,
-        sm: 0,
-        md: 0,
-        lg: 0,
-        xl: 0,
-        xxl: 0,
+        xs: 480,
+        sm: 640,
+        md: 1024,
+        lg: 1366,
+        xl: 1920,
+        '4k': 3840,
     },
 }

@@ -7,7 +7,6 @@ export default styled.div<ViewStyleProps>(
         const t = theme.palette ? theme : lightTheme
         return {
             label: 'view',
-            backgroundColor: 'red',
             display: horizontal ? 'flex' : undefined,
             width: block ? '100%' : w ? `${w / 0.12}%` : undefined,
             flexWrap: wrap ? 'wrap' : undefined,

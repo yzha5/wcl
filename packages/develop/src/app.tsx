@@ -1,14 +1,28 @@
+import { Route, Routes } from 'react-router-dom'
+import ContentLayout from './layouts/content'
+import ButtonPage from './pages/button'
+import ContainerPage from './pages/container'
 import IconPage from './pages/icon'
-import { Button, IconButton } from './pkgs/components/button/src'
-import Container from './pkgs/components/container/src/Container'
-import View from './pkgs/components/view/src'
+import NavbarPage from './pages/navbar'
+import ViewPage from './pages/view'
+import { ThemeProvider } from './pkgs/theme'
+import Normalize from './pkgs/normalize/src'
+import TypographyPage from './pages/typography'
 
 export default function App() {
     return (
-        <Container maxWidth='lg'>
-            <View w={3} xs={11} sm={8} md={6} lg={5} xl={3} xxl={2} hideUp='sm'>
-                view
-            </View>
-        </Container>
+        <>
+            <Normalize />
+            <Routes>
+                <Route element={<ContentLayout />}>
+                    <Route path='container' element={<ContainerPage />} />
+                    <Route path='view' element={<ViewPage />} />
+                    <Route path='icon' element={<IconPage />} />
+                    <Route path='button' element={<ButtonPage />} />
+                    <Route path='navbar' element={<NavbarPage />} />
+                    <Route path='typography' element={<TypographyPage />} />
+                </Route>
+            </Routes>
+        </>
     )
 }

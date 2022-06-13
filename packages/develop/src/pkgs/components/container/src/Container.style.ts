@@ -2,14 +2,14 @@ import styled from '@emotion/styled'
 import { lightTheme } from '../../../utils'
 import { ContainerStyleProps } from './Container.types'
 
-export default styled.div<ContainerStyleProps>(({ maxWidth, hideUp, hideDown, theme }) => {
+export default styled.div<ContainerStyleProps>(({ centerSelf, maxWidth, hideUp, hideDown, theme }) => {
     const t = theme.palette ? theme : lightTheme
     return {
         label: 'container',
         padding: '1rem',
-        marginRight: 'auto',
-        marginLeft: 'auto',
-        maxWidth: maxWidth ? t.breakpoints[maxWidth] : undefined,
+        marginRight: centerSelf ? 'auto' : undefined,
+        marginLeft: centerSelf ? 'auto' : undefined,
+        maxWidth: maxWidth ? t.breakpoints[maxWidth] : '100%',
 
         [`@media screen and (min-width:${t.breakpoints['4k']}px)`]: {
             display:

@@ -3,16 +3,34 @@ import { lightTheme } from '../../../utils'
 import { ViewStyleProps } from './View.types'
 
 export default styled.div<ViewStyleProps>(
-    ({ block, horizontal, wrap, w, xs, sm, md, lg, xl, xxl, hideUp, hideDown, theme }) => {
+    ({ horizontal, ww: wrap, gap, w, xs, sm, md, lg, xl, xxl, hideUp, hideDown, theme }) => {
         const t = theme.palette ? theme : lightTheme
         return {
             label: 'view',
-            display: horizontal ? 'flex' : undefined,
-            width: block ? '100%' : w ? `${w / 0.12}%` : undefined,
-            flexWrap: wrap ? 'wrap' : undefined,
+            display: 'flex',
+            flexDirection: horizontal ? 'row' : 'column',
+            flexWrap: wrap ? 'wrap' : 'nowrap',
+            width: w ? `${w / 0.12}%` : gap ? `calc(100% + ${gap}px)` : '100%',
+            overflow: 'visible',
+            margin: gap ? -gap / 2 : undefined,
+            '&>*': gap && {
+                margin: gap / 2,
+            },
 
             [`@media screen and (min-width:${t.breakpoints['4k']}px)`]: {
-                width: xxl ? `${xxl / 0.12}%` : undefined,
+                width: xxl
+                    ? `${xxl / 0.12}%`
+                    : xl
+                    ? `${xl / 0.12}%`
+                    : lg
+                    ? `${lg / 0.12}%`
+                    : md
+                    ? `${md / 0.12}%`
+                    : sm
+                    ? `${sm / 0.12}%`
+                    : xs
+                    ? `${xs / 0.12}%`
+                    : undefined,
                 display:
                     hideUp == 'xs' ||
                     hideUp == 'sm' ||
@@ -24,7 +42,17 @@ export default styled.div<ViewStyleProps>(
                         : undefined,
             },
             [`@media screen and (min-width:${t.breakpoints['xl']}px) and (max-width:${t.breakpoints['4k'] - 1}px)`]: {
-                width: xl ? `${xl / 0.12}%` : undefined,
+                width: xl
+                    ? `${xl / 0.12}%`
+                    : lg
+                    ? `${lg / 0.12}%`
+                    : md
+                    ? `${md / 0.12}%`
+                    : sm
+                    ? `${sm / 0.12}%`
+                    : xs
+                    ? `${xs / 0.12}%`
+                    : undefined,
                 display:
                     hideUp == 'xs' ||
                     hideUp == 'sm' ||
@@ -36,7 +64,15 @@ export default styled.div<ViewStyleProps>(
                         : undefined,
             },
             [`@media screen and (min-width:${t.breakpoints['lg']}px) and (max-width:${t.breakpoints['xl'] - 1}px)`]: {
-                width: lg ? `${lg / 0.12}%` : undefined,
+                width: lg
+                    ? `${lg / 0.12}%`
+                    : md
+                    ? `${md / 0.12}%`
+                    : sm
+                    ? `${sm / 0.12}%`
+                    : xs
+                    ? `${xs / 0.12}%`
+                    : undefined,
                 display:
                     hideUp == 'xs' ||
                     hideUp == 'sm' ||
@@ -48,7 +84,7 @@ export default styled.div<ViewStyleProps>(
                         : undefined,
             },
             [`@media screen and (min-width:${t.breakpoints['md']}px) and (max-width:${t.breakpoints['lg'] - 1}px)`]: {
-                width: md ? `${md / 0.12}%` : undefined,
+                width: md ? `${md / 0.12}%` : sm ? `${sm / 0.12}%` : xs ? `${xs / 0.12}%` : undefined,
                 display:
                     hideUp == 'xs' ||
                     hideUp == 'sm' ||
@@ -60,7 +96,7 @@ export default styled.div<ViewStyleProps>(
                         : undefined,
             },
             [`@media screen and (min-width:${t.breakpoints['sm']}px) and (max-width:${t.breakpoints['md'] - 1}px)`]: {
-                width: sm ? `${sm / 0.12}%` : undefined,
+                width: sm ? `${sm / 0.12}%` : xs ? `${xs / 0.12}%` : undefined,
                 display:
                     hideUp == 'xs' ||
                     hideDown == 'sm' ||

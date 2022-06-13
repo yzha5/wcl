@@ -27,7 +27,7 @@ export default styled.button<ButtonStyleProps>(
             ? t.palette.disabled
             : face == 'filled'
             ? textColor(c) ?? 'inherit'
-            : face == 'outlined'
+            : face == 'outlined' && c
             ? c
             : 'inherit'
         return {
@@ -44,7 +44,7 @@ export default styled.button<ButtonStyleProps>(
             backgroundColor,
             color: tc,
             '&>.wdkx-button-content': {
-                textAlign: 'left',
+                textAlign: hasSecondaryText ? 'left' : undefined,
                 lineHeight: '1.25em',
                 '&>.wdkx-button-content-text': {
                     fontWeight: 500,

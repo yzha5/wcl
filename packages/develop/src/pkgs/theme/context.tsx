@@ -10,7 +10,7 @@ interface Props {
 }
 
 export function ThemeProvider({ theme, children }: Props) {
-    const [t, setT] = useState<Theme>(null!)
+    const [t, setT] = useState<Theme>(lightTheme)
 
     useEffect(
         function () {

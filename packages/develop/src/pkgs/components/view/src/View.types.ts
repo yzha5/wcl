@@ -3,9 +3,9 @@ import { Breakpoints } from '../../../utils'
 
 type widthOption = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 export interface ViewStyleProps {
-    block?: boolean
-    wrap?: boolean
+    ww?: boolean
     horizontal?: boolean
+    gap?: number
     w?: widthOption
     xs?: widthOption
     sm?: widthOption
@@ -17,4 +17,6 @@ export interface ViewStyleProps {
     hideDown?: keyof Breakpoints
 }
 
-export interface ViewProps extends Omit<HTMLAttributes<HTMLDivElement>, 'wrap'>, ViewStyleProps {}
+export interface ViewProps extends Omit<HTMLAttributes<HTMLDivElement>, 'wrap'>, Omit<ViewStyleProps, 'ww'> {
+    wrap?: boolean
+}

@@ -1,1 +1,1 @@
-export * from './Normalize'
+export { default } from './Normalize'

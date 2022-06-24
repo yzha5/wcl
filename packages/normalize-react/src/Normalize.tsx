@@ -9,7 +9,7 @@ interface Props {
     ripple?: boolean
     typography?: boolean
 }
-export default function ({ ripple = true, extend = true, typography = true }: Props) {
+export default function Normalize({ ripple = true, extend = true, typography = true }: Props) {
     return (
         <>
             <Global styles={base} />

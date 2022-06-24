@@ -1,0 +1,10 @@
+{
+    "extends": "../../../tsconfig.config.json",
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "outDir": "lib",
+        "declaration": true,
+        "declarationDir": "lib/types"
+    },
+    "include": ["src", "src/theme.d.ts"]
+}

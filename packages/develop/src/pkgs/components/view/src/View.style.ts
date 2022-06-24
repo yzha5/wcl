@@ -3,14 +3,15 @@ import { lightTheme } from '../../../utils'
 import { ViewStyleProps } from './View.types'
 
 export default styled.div<ViewStyleProps>(
-    ({ horizontal, ww: wrap, gap, w, xs, sm, md, lg, xl, xxl, hideUp, hideDown, theme }) => {
+    ({ horizontal, grow, ww: wrap, gap, w, xs, sm, md, lg, xl, xxl, hideUp, hideDown, theme }) => {
         const t = theme.palette ? theme : lightTheme
         return {
             label: 'view',
             display: 'flex',
+            flexGrow: grow ? 1 : undefined,
             flexDirection: horizontal ? 'row' : 'column',
             flexWrap: wrap ? 'wrap' : 'nowrap',
-            width: w ? `${w / 0.12}%` : gap ? `calc(100% + ${gap}px)` : '100%',
+            width: w ? `${w / 0.12}%` : gap ? `calc(100% + ${gap}px)` : undefined,
             overflow: 'visible',
             margin: gap ? -gap / 2 : undefined,
             '&>*': gap && {

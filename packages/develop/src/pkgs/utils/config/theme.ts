@@ -13,13 +13,15 @@ export interface Palette {
     text: string
     background: string
     primary: string
-    success: string
-    warn: string
     error: string
+    warn: string
+    success: string
+    info: string
     gray: string
     placeholder: string
-    disabled: string
-    disabledBg: string
+    disabled: { text: string; border: string; bg: string }
+    border: string
+    borderActive: string
 }
 
 export interface Theme {
@@ -29,28 +31,32 @@ export interface Theme {
 }
 
 const lightPalette: Palette = {
-    text: '#031A30',
+    text: '#120330',
     background: '#fff',
-    primary: '#0D80F2',
-    success: '#0DF280',
-    warn: '#F2800D',
+    primary: '#590DF2',
     error: '#F20D80',
+    warn: '#F2800D',
+    success: '#0DF280',
+    info: '#0D80F2',
     gray: '#808080',
-    placeholder: '#BFBFBF',
-    disabled: '#ccc',
-    disabledBg: '#ebebeb',
+    placeholder: '#B8B8B8',
+    disabled: { bg: '#EBEBEB', border: '#ccc', text: '#ccc' },
+    border: '#ccc',
+    borderActive: '#808080',
 }
 const darkPalette: Palette = {
-    text: '#CFE6FC',
-    background: '#042443',
-    primary: '#77B8F8',
-    success: '#77F8B8',
-    warn: '#F8B877',
+    text: '#fff',
+    background: '#100C18',
+    primary: '#A277F8',
     error: '#F877B8',
+    warn: '#F8B877',
+    success: '#77F8B8',
+    info: '#77B8F8',
     gray: '#B8B8B8',
-    placeholder: '#BFBFBF',
-    disabled: '#333',
-    disabledBg: '#141414',
+    placeholder: '#525252',
+    disabled: { bg: '#141414', border: '#3D3D3D', text: '#3D3D3D' },
+    border: '#8d8d8d',
+    borderActive: '#ECE4FE',
 }
 const breakpoints: Breakpoints = {
     xs: 480,

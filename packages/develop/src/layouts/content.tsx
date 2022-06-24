@@ -2,7 +2,20 @@ import { Link, Outlet } from 'react-router-dom'
 import View from '../pkgs/components/view/src'
 import './content.css'
 
-const routes = ['container', 'view', 'icon', 'button', 'navbar', 'input', 'typography']
+const routes = [
+    'color',
+    'container',
+    'view',
+    'icon',
+    'button',
+    'navbar',
+    'input',
+    'input-box',
+    'typography',
+    'dropdown',
+    'list',
+    'popup',
+]
 export default function ContentLayout() {
     return (
         <>

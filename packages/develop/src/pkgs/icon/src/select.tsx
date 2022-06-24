@@ -427,3 +427,8 @@ const nameMap: NameMap = {
 export function iconSelect(name: IconName): IconFunc {
     return nameMap[name]
 }
+
+export function IconSelect({ name }: { name: IconName }) {
+    const Icon = nameMap[name]
+    return <Icon />
+}

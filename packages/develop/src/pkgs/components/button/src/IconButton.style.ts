@@ -12,18 +12,18 @@ export default styled.button<IconButtonStyleProps>(
         const gray = t.palette.gray
         const border = color
             ? face == 'outlined'
-                ? `solid 0.0625em ${disabled ? t.palette.disabled : c}`
+                ? `solid 0.0625em ${disabled ? t.palette.disabled.border : c}`
                 : 'none'
             : face != 'link'
-            ? `solid 0.0625em ${disabled ? t.palette.disabled : gray}`
+            ? `solid 0.0625em ${disabled ? t.palette.disabled.border : gray}`
             : 'none'
         const backgroundColor = disabled
-            ? t.palette.disabledBg
+            ? t.palette.disabled.bg
             : face == 'filled' && color != undefined
             ? c
             : 'transparent'
         const tc = disabled
-            ? t.palette.disabled
+            ? t.palette.disabled.text
             : face == 'filled'
             ? textColor(c) ?? 'inherit'
             : face == 'outlined'
@@ -41,9 +41,9 @@ export default styled.button<IconButtonStyleProps>(
             backgroundColor,
             color: tc,
             '&:hover:not(:disabled)': {
-                boxShadow: `0 0.5em 4em 0 ${Color(color ? c : gray).alpha(0.48)},0 0.25em 0.5em 0 ${Color(
-                    color ? c : gray
-                ).alpha(0.32)}`,
+                boxShadow: `0 0.5em 4em 0 ${Color(color ? c : gray).alpha(
+                    0.48
+                )},0 0.25em 0.5em 0 ${Color(color ? c : gray).alpha(0.32)}`,
             },
             '&>.ripple--container span': {
                 backgroundColor: color ? (face == 'filled' ? textColor(c) : c) : gray,

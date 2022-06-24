@@ -50,18 +50,35 @@ export function componentColor(color: IColor | undefined, theme: Theme): string 
     if (color) {
         switch (color) {
             case 'primary':
-                return theme.palette.primary
-            case 'success':
-                return theme.palette.success
-            case 'warn':
-                return theme.palette.warn
             case 'error':
-                return theme.palette.error
+            case 'warn':
+            case 'success':
+            case 'info':
+            case 'gray':
+                return theme.palette[color]
             default:
                 return color
         }
     } else {
         return undefined
+    }
+}
+
+// 组件浅色
+export function lightColor(color: string, isDark: boolean = false) {
+    if (isDark) {
+        return Color(color).mix(Color('black'), 0.48).toString()
+    } else {
+        return Color(color).mix(Color('white'), 0.64).toString()
+    }
+}
+
+// 组件深色
+export function darkColor(color: string, isDark: boolean = false) {
+    if (isDark) {
+        return Color(color).mix(Color('white'), 0.4).toString()
+    } else {
+        return Color(color).mix(Color('black'), 0.4).toString()
     }
 }
 

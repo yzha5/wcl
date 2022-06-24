@@ -6,10 +6,19 @@
     "workspaces": [
         "packages/**"
     ],
-    "scripts": {},
+    "scripts": {
+        "build:icon-react": "lerna run build --scope=@wdkx/icon-react",
+        "build:utils-react": "lerna run build --scope=@wdkx/utils-react",
+        "build:theme-react": "lerna run build --scope=@wdkx/theme-react",
+        "build:component-tools-react": "lerna run build --scope=@wdkx/component-tools-react",
+        "build:normalize-react": "lerna run build --scope=@wdkx/normalize-react",
+        "build:button-react": "lerna run build --scope=@wdkx/button-react",
+        "build:ui-react": "lerna run build --scope=@wdkx/ui-react"
+    },
     "devDependencies": {
         "@emotion/react": "^11.9.0",
         "@emotion/styled": "^11.8.1",
+        "@rollup/plugin-commonjs": "^22.0.0",
         "@rollup/plugin-node-resolve": "^13.3.0",
         "@types/color": "^3.0.3",
         "@types/react": "^18.0.12",

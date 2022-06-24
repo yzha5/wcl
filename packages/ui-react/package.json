@@ -1,0 +1,28 @@
+{
+  "name": "@wdkx/ui-react",
+  "version": "1.0.0",
+  "description": "Component library for react",
+  "author": "yangzhao <yzha5@163.com>",
+  "homepage": "https://react.weidukexue.com",
+  "license": "MIT",
+  "module": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://registry.npmmirror.com/",
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "peerDependencies": {
+    "@wdkx/button-react": "^1.0.0",
+    "@wdkx/component-tools-react": "^1.0.0",
+    "@wdkx/icon-react": "^1.0.0",
+    "@wdkx/normalize-react": "^1.0.0",
+    "@wdkx/theme-react": "^1.0.0",
+    "@wdkx/utils-react": "^1.0.0"
+  }
+}
